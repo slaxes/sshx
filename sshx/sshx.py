@@ -484,7 +484,7 @@ def command_copyid(identity, name, via):
     return handle_copyid(name, identity, via=via)
 
 
-@cli.resultcallback()
+@cli.result_callback()
 def process_result(result, debug, interval, countmax, forever, retry, retry_interval):
     '''The result is used as the exit status code.'''
     return result
