@@ -46,7 +46,7 @@ def sigwinch_passthrough(p):
 
 _SSH_KEEPALIVE = ' -o ServerAliveInterval={interval} -o ServerAliveCountMax={countmax}'
 _SSH_COMMAND_PASSWORD = 'ssh \
--o PreferredAuthentications=password \
+-o PreferredAuthentications=keyboard-interactive \
 -o LogLevel=ERROR \
 -o StrictHostKeyChecking=no \
 -o UserKnownHostsFile=/dev/null \
@@ -70,7 +70,7 @@ _SSH_CONFIG_GLOBAL = '''Host *
 _SSH_COMMAND_CONFIG = 'ssh {extras} {forwards} {name} {cmd}'
 _SSH_DEST = '{user}@{host}:{port}'
 _SCP_COMMAND_PASSWORD = 'scp -r \
--oPreferredAuthentications=password \
+-oPreferredAuthentications=keyboard-interactive \
 -o LogLevel=ERROR \
 -oStrictHostKeyChecking=no \
 -oUserKnownHostsFile=/dev/null \
